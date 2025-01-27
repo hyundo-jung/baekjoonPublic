@@ -8,7 +8,7 @@ int main(void)
     scanf("%d", &c);
     scanf("%d", &n0);
 
-    // if (a1 > c && a0 < 0)
+    // if (a1 > c)
     // {
     //     printf("0 \n");
     // }
