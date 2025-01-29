@@ -2,55 +2,33 @@
 
 int main(void)
 {
-    int n, m, arr[1000000], factor, digit, i, originalVal, temp, result = 0;
+    int N, i, temp, n;
 
-    scanf("%d", &n);
+    scanf("%d", &N);
 
-    originalVal = n;
-
-    while(n > 0)
+    for (i = 1; i < N; i++)
     {
-        factor = 1, digit = 0;
-        n--;
+        temp = i; // for each digit
+        n = i;
 
-        temp = n;
-
-        while (factor < n)
+        while(temp > 0)
         {
-            factor *= 10;
-            digit += 1;
-        }
-        factor /= 10;
-
-        
-        for (i = 0; i < digit; i++)
-        {
-            arr[i] = temp / factor;
-            temp -= factor * arr[i];
-            factor /= 10;
+            n += temp % 10;
+            temp /= 10;
         }
 
-        // for (i = 0; i < digit; i++)
-        // {
-        //     printf("%d ", arr[i]);
-        // }
-        // printf("\n");
-
-        m = n;
-
-        for (i = 0; i < digit; i++)
+        if (n == N)
         {
-            m += arr[i];
-            // printf("%d \n", arr[i]);
-        }
-
-        if (m == originalVal)
-        {
-            result = n;
+            N = 0;
+            printf("%d \n", i);
+            break;
         }
     }
 
-    printf("%d \n", result);
+    if (N != 0)
+    {
+        printf("0 \n");
+    }
 
     return 0;
 }
