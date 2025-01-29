@@ -1,7 +1,7 @@
 #include <stdio.h>
 
-# another solutoin: consider count that it takes to create a board that starts with white and black respectively
-# compare two values
+//another solutoin: consider count that it takes to create a board that starts with white and black respectively
+//compare two values
 
 
 int main(void)
