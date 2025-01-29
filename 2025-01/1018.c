@@ -1,5 +1,9 @@
 #include <stdio.h>
 
+# another solutoin: consider count that it takes to create a board that starts with white and black respectively
+# compare two values
+
+
 int main(void)
 {
     int N, M, i, j, k, h, countWhite, countBlack, min = 64;
