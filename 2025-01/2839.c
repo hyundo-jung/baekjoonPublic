@@ -2,38 +2,33 @@
 
 int main(void)
 {
-    int weight, numThree, numFive, i, j, bag = 100000, found = 0;
+    int weight, count = 0;
 
     scanf("%d", &weight);
 
-    numThree = weight / 3;
-    numFive = weight / 5;
-
-
-    for (i = numFive; i >= 0; i--)
+    while (weight > 0)
     {
-        for (j = numThree; j >= 0; j--)
+        if (weight % 5 == 0)
         {
-            if (i * 5 + j * 3 == weight)
-            {
-                if (i + j < bag)
-                {
-                    bag = i + j;
-                    found = 1;
-                }
-            }
+            count += weight / 5;
+            // weight -= (weight / 5) * 5;
+            weight = 0;
+            break;
+        }
+        else
+        {
+            weight -= 3;
+            count += 1;
         }
     }
 
-    if (found == 1)
+    if (weight == 0 && count != 0)
     {
-        printf("%d \n", bag);
+        printf("%d \n", count);
     }
     else
     {
         printf("-1 \n");
     }
-
-
     return 0;
 }
