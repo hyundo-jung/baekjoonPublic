@@ -6,6 +6,7 @@ int main(void)
 
     scanf("%d", &N);
 
+    // another solution is using % 1000 and check when reminder is 666
 
     while (N > count)
     {
